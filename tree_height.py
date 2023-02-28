@@ -8,12 +8,12 @@ def compute_height(n, parents):
     adj_list = [[] for _ in range(n)]
     for i, p in enumerate(parents):
         if p != -1:
-            list[p].append(i)
+            adj_list[p].append(i)
 
-    def dfs(v, ady_list):
+    def dfs(v, adj_list):
         max_height = 0
-        for u in list[v]:
-            max_height = max(max_height, dfs(u, ady_list))
+        for u in adj_list[v]:
+            max_height = max(max_height, dfs(u, adj_list))
         return max_height + 1
 
     root = parents.index(-1)
