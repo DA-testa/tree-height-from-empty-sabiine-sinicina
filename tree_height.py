@@ -27,8 +27,8 @@ def main():
         filename = input()
         if ".a" in filename:
             return
-        if "test/" not in filename:
-            filename = "test/" + filename
+        #if "test/" not in filename:
+            #filename = "test/" + filename
         with open(filename) as f:
             n = int(f.readline().strip())
             parents = list(map(int, f.readline().strip().split()))
