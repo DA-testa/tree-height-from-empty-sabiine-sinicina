@@ -5,10 +5,10 @@ import threading
 
 
 def compute_height(n, parents):
-    adj_list = [[] for _ in range(n)]
+    list = [[] for _ in range(n)]
     for i, p in enumerate(parents):
         if p != -1:
-            adj_list[p].append(i)
+            list[p].append(i)
 
     def dfs(v, list):
         max_height = 0
@@ -17,7 +17,7 @@ def compute_height(n, parents):
         return max_height + 1
 
     root = parents.index(-1)
-    height = dfs(root, adj_list)
+    height = dfs(root, list)
     return height
 
 def main():
