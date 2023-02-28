@@ -39,8 +39,6 @@ def main():
         return
     print(compute_height(n, parents))
     
-
-
     # implement input form keyboard and from files
     
     # let user input file name to use, don't allow file names with letter a
