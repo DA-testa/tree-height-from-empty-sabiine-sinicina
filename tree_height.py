@@ -27,13 +27,13 @@ def main():
         filename = input()
         if ".a" in filename:
             return
-        if "test/" not in filename:
-            filename = "test/" + filename
-        if "test/" in filename:    
-            with open(filename) as f:
-                n = int(f.readline().strip())
-                parents = list(map(int, f.readline().strip().split()))
-                height = compute_height(n, parents)
+        #if "test/" not in filename:
+            #filename = "test/" + filename
+        #if "test/" in filename:    
+        with open(filename) as f:
+            n = int(f.readline().strip())
+            parents = list(map(int, f.readline().strip().split()))
+            height = compute_height(n, parents)
     elif "I" in input_type:
         n = int(input())
         parents = list(map(int, input().split()))
