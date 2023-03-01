@@ -39,6 +39,9 @@ def main():
         parents = list(map(int, input().split()))
         height = compute_height(n, parents)
         print(height)
+        
+if __name__ == "__main__":
+    main()
     #else:
         #return
     
