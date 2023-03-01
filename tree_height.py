@@ -27,25 +27,20 @@ def main():
         filename = input()
         if ".a" in filename:
             return
-        #if "test/" not in filename:
-            #filename = "test/" + filename
-        with open(filename) as f:
-            n = int(f.readline().strip())
-            parents = list(map(int, f.readline().strip().split()))
-            height = compute_height(n, parents)
-            print(height)
+        if "test/" not in filename:
+            filename = "test/" + filename
+        if "test/" in filename:    
+            with open(filename) as f:
+                n = int(f.readline().strip())
+                parents = list(map(int, f.readline().strip().split()))
+                height = compute_height(n, parents)
     elif input_type == "I":
         n = int(input())
         parents = list(map(int, input().split()))
         height = compute_height(n, parents)
+
         print(height)
         
-if __name__ == "__main__":
-    main()
-    #else:
-        #return
-    
-    
     # implement input form keyboard and from files
     
     # let user input file name to use, don't allow file names with letter a
