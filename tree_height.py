@@ -23,7 +23,7 @@ def compute_height(n, parents):
 def main():
     input_type = input()
 
-    if input_type == "F":
+    if "F" in input_type:
         filename = input()
         if ".a" in filename:
             return
@@ -31,11 +31,11 @@ def main():
             filename = "test/" + filename
         if "test/" in filename:    
             with open(filename) as f:
-                lines = f.readline()
+                lines = f.readlines()
                 n = int(lines[0])
                 parents = list(map(int, lines[1].split()))
                 height = compute_height(n, parents)
-    elif input_type == "I":
+    elif "I" in input_type:
         n = int(input())
         parents = list(map(int, input().split()))
         height = compute_height(n, parents)
