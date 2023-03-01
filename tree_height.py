@@ -31,15 +31,16 @@ def main():
             filename = "test/" + filename
         if "test/" in filename:    
             with open(filename) as f:
-                n = int(f.readline().strip())
-                parents = list(map(int, f.readline().strip().split()))
+                lines = f.readlines()
+                n = int(lines[0])
+                parents = list(map(int, lines[1].split()))
                 height = compute_height(n, parents)
     elif "I" in input_type:
         n = int(input())
         parents = list(map(int, input().split()))
         height = compute_height(n, parents)
 
-        print(height)
+    print(height)
 
 
 
