@@ -32,12 +32,14 @@ def main():
         with open(filename) as f:
             n = int(f.readline().strip())
             parents = list(map(int, f.readline().strip().split()))
+            height = compute_height(n, parents)
     elif input_type == "I":
         n = int(input())
         parents = list(map(int, input().split()))
+        height = compute_height(n, parents)
     else:
         return
-    print(compute_height(n, parents))
+    print(height)
     
     # implement input form keyboard and from files
     
